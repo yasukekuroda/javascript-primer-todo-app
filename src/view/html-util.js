@@ -1,16 +1,16 @@
 function escapeSpecialChars(str) {
-    return str
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 function htmlToElement(html) {
-    const template = document.createElement("template");
-    template.innerHTML = html;
-    return template.content.firstElementChild;
+  const template = document.createElement("template");
+  template.innerHTML = html;
+  return template.content.firstElementChild;
 }
 
 /**
@@ -18,15 +18,15 @@ function htmlToElement(html) {
  * @return {Element}
  */
 export function element(strings, ...values) {
-    const htmlString = strings.reduce((result, str, i) => {
-        const value = values[i - 1];
-        if (typeof value === "string") {
-            return result + escapeSpecialChars(value) + str;
-        } else {
-            return result + String(value) + str;
-        }
-    });
-    return htmlToElement(htmlString);
+  const htmlString = strings.reduce((result, str, i) => {
+    const value = values[i - 1];
+    if (typeof value === "string") {
+      return result + escapeSpecialChars(value) + str;
+    } else {
+      return result + String(value) + str;
+    }
+  });
+  return htmlToElement(htmlString);
 }
 
 /**
@@ -35,8 +35,8 @@ export function element(strings, ...values) {
  * @param {Element} containerElement コンテナ要素
  */
 export function render(bodyElement, containerElement) {
-    // containerElementの中身を空にする
-    containerElement.innerHTML = "";
-    // containerElementの直下にbodyElementを追加する
-    containerElement.appendChild(bodyElement);
+  // containerElementの中身を空にする
+  containerElement.innerHTML = "";
+  // containerElementの直下にbodyElementを追加する
+  containerElement.appendChild(bodyElement);
 }

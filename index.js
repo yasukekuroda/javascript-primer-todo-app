@@ -9,7 +9,7 @@ const app = new App({
   formElement,
   formInputElement,
   todoListElement,
-  todoCountElement
+  todoCountElement,
 });
 window.addEventListener("load", () => {
   app.mount();

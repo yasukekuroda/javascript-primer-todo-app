@@ -3,7 +3,9 @@
 [Todoアプリ · JavaScript Primer](https://jsprimer.net/use-case/todoapp/) を元に、MVCアーキテクチャで実装したTodoアプリケーションです。
 
 ## アーキテクチャ設計
+
 ### Model
+
 Modelはアプリケーションのデータとその状態を管理します。以下の2つのクラスで構成されています。
 
 - `TodoItemModel`
@@ -16,6 +18,7 @@ Modelはアプリケーションのデータとその状態を管理します。
   - `EventEmitter`を継承しており、状態の変更を通知する仕組みを持っています。
 
 ### View
+
 - `TodoItemView`
   - 単一のTodoアイテムを描画するためのクラスです。
 
@@ -26,7 +29,6 @@ Modelはアプリケーションのデータとその状態を管理します。
 - `html-util.js`
   - DOM操作を簡略化するためのユーティリティ関数を提供します。
 
-
 ### Controller
 
 `App`クラスがコントローラとして機能します。以下の役割を持ちます。
@@ -35,6 +37,7 @@ Modelはアプリケーションのデータとその状態を管理します。
 - ControllerがModelの変更イベントを検知し、View再構築(Todoの画面表示)を指示します。
 
 ### ファイル構成
+
 ```
 index.html           # アプリケーションのHTML
 index.js             # エントリーポイント
